@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" ng-app="xcoreisc">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="application-c2a9b6bae7d19f5173aba5e137a4d42c.css" media="all" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="add.css">
+	<script src="angular.min.js"></script>
+	<script src="angular-route.js"></script>
+<script>
+	var app = angular.module("xcoreisc", ['ngRoute']);
+	app.config(function($routeProvider) {
+	  	$routeProvider
+	  	.when('/dias/:days', {
+	      controller:'timeline',
+	      templateUrl:'dias.html',
+	    })
+	    .when('/', {
+	      controller:'timeline',
+	      templateUrl:'dias.html',
+	    })
+	    .otherwise({
+	      redirectTo:'/'
+	    });
+	});
+	app.controller("timeline",function($scope,$routeParams){
+		$scope.lunes = [
+		{
+			name:'ENTREGA DE MATERIALES 1',
+			hora:'7:30',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+		},
+		{
+			hora:'13:30',
+			name:'ENTREGA DE MATERIALES 2',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			type:'inverse'
+		},
+		{
+			hora:'15:30',
+			name:'ENTREGA DE MATERIALES 3',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			
+		},
+		{
+			hora:'18:30',
+			name:'ENTREGA DE MATERIALES 4',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			type:'inverse'
+		},
+		{
+			hora:'21:30',
+			name:'ENTREGA DE MATERIALES 5',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			
+		},
+		{
+			hora:'22:30',
+			name:'ENTREGA DE MATERIALES 6',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			type:'inverse'
+		},
+		];
+		$scope.martes = [
+		{
+			name:'CONFERENCIA 1',
+			hora:'7:30',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			type:'inverse'
+		},
+		{
+			hora:'13:30',
+			name:'CONFERENCIA 2',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			
+		},
+		{
+			hora:'15:30',
+			name:'CONFERENCIA 3',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:'
+		},
+		{
+			hora:'18:30',
+			name:'CONFERENCIA 4',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:'
+		},
+		{
+			hora:'21:30',
+			name:'CONFERENCIA 5',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:'
+		},
+		{
+			hora:'22:30',
+			name:'CONFERENCIA 6',
+			horabase:'7:30 am - 1:00 pm',
+			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:'
+		},
+		];
+		var sw = 0;
+		if ($routeParams.days == 'lunes') {$scope.dias = $scope.lunes;sw=1};
+		if ($routeParams.days == 'martes') {$scope.dias = $scope.martes;sw=1};
+		if ($routeParams.days == 'miercoles') {$scope.dias = $scope.miercoles;sw=1};
+		if ($routeParams.days == 'jueves') {$scope.dias = $scope.jueves;sw=1};
+		if ($routeParams.days == 'viernes') {$scope.dias = $scope.viernes;sw=1};
+		if ($routeParams.days == 'sabado') {$scope.dias = $scope.sabado;sw=1};
+		if (sw===0) {$scope.dias = $scope.lunes; $routeParams.days='lunes'};
+		$scope.model = {
+		    message: $routeParams.days
+		}
+	  
+	});
+</script>
+</head>
+<body>
+<main class="col-xs-24 col-md-24 col-lg-push-2 col-lg-22 main" >
+<div class="row">
+	<div class="col-md-4">
+		<ul class="timeline-days">
+			<li><a href="#/dias/lunes">Lunes</a></li>
+			<li><a href="#/dias/martes">Martes</a></li>
+			<li><a href="#/dias/miercoles">Miercoles</a></li>
+			<li><a href="#/dias/jueves">Jueves</a></li>
+			<li><a href="#/dias/viernes">Viernes</a></li>
+			<li><a href="#/dias/sabado">Sabado</a></li>
+		</ul>
+	</div>
+	<div class="col-md-19" ng-view>
+		
+	</div>
+</div>
+</main>
+	
+	
+</body>
+</html>

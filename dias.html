@@ -1,0 +1,21 @@
+<div ng-controller="timeline">
+	<h1 class="timeline-header">{{model.message}}</h1>
+	<ul class="timeline">
+		<li ng-repeat="evento in dias" class="{{evento.type}}">
+			<div class="timeline-badge">
+			{{evento.hora}}
+			</div>
+			<div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h3 class="timeline-title">{{evento.name}}</h3>
+	            </div>
+	            <div class="timeline-body">
+	              <p>{{evento.descripcion}}.</p>
+	            </div>
+	            <div class="timeline-footer">
+	            	<p><small><i class="glyphicon glyphicon-time"></i> {{evento.horabase}}</small></p>
+	            </div>
+          </div>
+		</li>
+	</ul>
+</div>

@@ -91,20 +91,27 @@
 		background: #fff;
 		border: 1px solid #d4d4d4;
 		border-radius: 2px;
-		padding-right: 1px;
-		padding-left: 1px;
+		padding:5px;
 		position: relative;
 		color: #fff;
 		-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
 	}
 	.timeline > li > .timeline-panel > .box > .timeline-heading{
 		padding: 5px 5px 0 5px;
 		background: #e67e22;
+		text-align: center;
 	}
 	.timeline > li > .timeline-panel > .box > .timeline-body{
-		padding: 8px;
+		padding: 8px 8px 8px 70px;
 		background: #fff;
+		background-repeat: no-repeat;
+		background-size:60px;
+		background-position: 0 5px;
+		min-height: 68px;
 		color: #000;
 	}
 	.timeline > li > .timeline-panel > .box > .timeline-footer{

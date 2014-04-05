@@ -6,15 +6,15 @@
 			{{evento.hora}}
 			</div>
 			<div class="timeline-panel">
-				<div class="box"  ng-repeat="item in evento.items">
+				<div class="box" ng-repeat="item in evento.items" ng-bind-html-unsafe="item.descripcion">
 					<div class="timeline-heading">
 		              <h3 class="timeline-title">{{item.name}}</h3>
 		            </div> 
-		            <div class="timeline-body">
-		              <p>{{item.descripcion}}.</p>
+		            <div class="timeline-body" style="background-image:url('{{item.imagen}}')">
+		              <p>{{item.descripcion}}</p>
 		            </div>
 		            <div class="timeline-footer">
-		            	<div class="lugar">Lugar: Auditorio FICSA</div>
+		            	<div class="lugar">Lugar: {{item.lugar}}</div>
 		            	<div class="hora"><small><i class="glyphicon glyphicon-time"></i> {{item.horabase}}</small></div>
 		            </div>
 				</div>

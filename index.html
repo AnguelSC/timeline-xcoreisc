@@ -1,79 +1,294 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app="xcoreisc">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="application-c2a9b6bae7d19f5173aba5e137a4d42c.css" media="all" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="add.css">
+	<script src="angular.min.js"></script>
+	<script src="angular-route.js"></script>
+<script>
+	var app = angular.module("xcoreisc", ['ngRoute']);
+	app.config(function($routeProvider) {
+	  	$routeProvider
+	  	.when('/dias/:days', {
+	      controller:'timeline',
+	      templateUrl:'dias.html',
+	    })
+	    .when('/', {
+	      controller:'timeline',
+	      templateUrl:'dias.html',
+	    })
+	    .otherwise({
+	      redirectTo:'/'
+	    });
+	});
+	app.controller("timeline",function($scope,$routeParams){
+		$scope.lunes = [
+		{
+			hora:'7:30',
+			items:[
+			{
+				name:'ENTREGA DE MATERIALES',
+				horabase:'7:30 - 13:00',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+		},
+		{
+			hora:'13:00',
+			items:[
+			{
+				name:'RECESO',
+				horabase:'13:00 - 14:00 ',
+				descripcion:'Intermedio, te invitamos a disfrutar de los platos tipicos que se estaran ofreciendo en los alrrededores de las instalaciones',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'15:30',
+			items:[
+			{
+				name:'CEREMONIA DE IGNAGURACION',
+				horabase:'14:30 - 16:30',
+				descripcion:'@COREISC #BIENVENIDO',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			]
+			
+		},
+		{
+			hora:'16:30',
+			items:[{
+				name:'CONFERENCIA',
+				horabase:'16:30 - 18:00',
+				descripcion:'Javi Jimenes (Tapquo)',
+				imagen:'http://xcoreisc.com/images/speakers/soyjavi.jpg',
+			},
+			],
+			type:'inverse',
+		}, 
+		{
+			hora:'18:00',
+			items:[
+			{
+				name:'CONFERENCIA',
+				horabase:'18:00 - 19:30',
+				descripcion:'Ing. Oscar Capuñay (Realidad aumentada)',
+				imagen:'http://xcoreisc.com/images/speakers/ocapunay.jpg',
+			},
+			{
+				name:'MESA DE NEGOCIOS',
+				horabase:'18:00 - 19:30',
+				descripcion:'CON JAVI JIMENES',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Timeline-xcoreisc : " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Timeline-xcoreisc</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/AnguelSC/timeline-xcoreisc">View on GitHub</a>
-
-          <h1 id="project_title">Timeline-xcoreisc</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/AnguelSC/timeline-xcoreisc/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/AnguelSC/timeline-xcoreisc/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Timeline-xcoreisc maintained by <a href="https://github.com/AnguelSC">AnguelSC</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+			},
+			],
+			
+		},
+		{
+			hora:'19:30',
+			items:[
+			{
+				name:'RECESO',
+				horabase:'19:30 - 21:30 ',
+				descripcion:'Intermedio, te invitamos a disfrutar de los platos tipicos que se estaran ofreciendo en los alrrededores de las instalaciones',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'21:30',
+			items:[
+			{
+				name:'RECEPCION FINAL DEL CONCURSO DE PROYECTOS & CALL FOR PAPERS',
+				horabase:'21:30 - 22:00',
+				descripcion:'',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'',
+		},
+		{
+			hora:'22:00',
+			items:[
+			{
+				name:'FIESTA DE CONFRATERNIDAD',
+				horabase:'22:00 - 3:00',
+				descripcion:'LUGAR: MAGNO',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'inverse',
+		},
+		];
+		$scope.martes = [
+		{
+			hora:'7:00',
+			items:[
+			{
+				name:'HACKETON',
+				horabase:'7:00 - 20:30(Mier)',
+				descripcion:'EVENTO EXCLUSIVO',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'',
+		},
+		{
+			hora:'9:00',
+			items:[
+			{
+				name:'CONFERENCIA',
+				horabase:'9:00 - 11:00',
+				descripcion:'REPRESENTANTE ISACA TI/SI',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			{
+				name:'TALLER',
+				horabase:'9:00 - 12:30',
+				descripcion:'Javi Jimenez Villar (Tapquo)',
+				imagen:'http://xcoreisc.com/images/speakers/soyjavi.jpg',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'11:00',
+			items:[
+			{
+				name:'MESA DE NEGOCIOS',
+				horabase:'11:00 - 12:30',
+				descripcion:'CON REPRESENTANTE ISACA',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			{
+				name:'CONFERENCIA',
+				horabase:'11:00 - 12:30',
+				descripcion:'Ing Lennon Shimokawa (Google Glass)',
+				imagen:'http://xcoreisc.com/images/speakers/lshimokawa.jpeg',
+			},
+			],
+			type:'',
+		},
+		{
+			hora:'12:30',
+			items:[
+			{
+				name:'RECESO',
+				horabase:'12:30 - 14:30',
+				descripcion:'FERIA TECNOLOGICA, GASTRONOMICA Y ARTESANAL',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'14:30',
+			items:[
+			{
+				name:'CONFERENCIA',
+				horabase:'14:30 - 16:30',
+				descripcion:'Arturo Canez',
+				imagen:'http://xcoreisc.com/images/speakers/arturocanez.jpg',
+			},
+			{
+				name:'TALLER',
+				horabase:'12:30 - 17:30',
+				descripcion:'Ing. Landaluce',
+				imagen:'http://xcoreisc.com/images/speakers/flandaluce.jpeg',
+			},
+			],
+			type:'',
+		},
+		{
+			hora:'16:30',
+			items:[
+			{
+				name:'I MESA REDONDA PROGRAMACION',
+				horabase:'16:30 - 19:00',
+				descripcion:'@XCOREISC #IMESAREDONDA',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'18:00',
+			items:[
+			{
+				name:'TALLER',
+				horabase:'18:00 - 20:00',
+				descripcion:'Ing. Oscar Capuñay',
+				imagen:'http://xcoreisc.com/images/speakers/ocapunay.jpg',
+			},
+			],
+			type:'',
+		},
+		{
+			hora:'19:30',
+			items:[
+			{
+				name:'CONFERENCIA',
+				horabase:'19:30 - 20:30',
+				descripcion:'Ing. Landaluce',
+				imagen:'http://xcoreisc.com/images/speakers/flandaluce.jpeg',
+			},
+			],
+			type:'inverse',
+		},
+		{
+			hora:'21:30',
+			items:[
+			{
+				name:'NOCHE DEPORTIVA',
+				horabase:'21:30 - 1:00',
+				descripcion:'LUGAR: CASA COMUNAL DE LA JUVENTUD',
+				imagen:'http://xcoreiscapp.herokuapp.com.global.prod.fastly.net/assets/logo-xcoreisc-1f76d67d23a44f1c6333c22784472020.png',
+			},
+			],
+			type:'',
+		},
+		];
+		var sw = 0;
+		if ($routeParams.days == 'lunes') {$scope.dias = $scope.lunes;sw=1};
+		if ($routeParams.days == 'martes') {$scope.dias = $scope.martes;sw=1};
+		if ($routeParams.days == 'miercoles') {$scope.dias = $scope.miercoles;sw=1};
+		if ($routeParams.days == 'jueves') {$scope.dias = $scope.jueves;sw=1};
+		if ($routeParams.days == 'viernes') {$scope.dias = $scope.viernes;sw=1};
+		if ($routeParams.days == 'sabado') {$scope.dias = $scope.sabado;sw=1};
+		if (sw===0) {$scope.dias = $scope.lunes; $routeParams.days='lunes'};
+		$scope.model = {
+		    message: $routeParams.days
+		}
+	  
+	});
+</script>
+</head>
+<body>
+<main class="col-xs-24 col-md-24 col-lg-push-2 col-lg-22 main" >
+<div class="row">
+	<div class="col-md-4">
+		<ul class="timeline-days">
+			<li><a href="#/dias/lunes">Lunes</a></li>
+			<li><a href="#/dias/martes">Martes</a></li>
+			<li><a href="#/dias/miercoles">Miercoles</a></li>
+			<li><a href="#/dias/jueves">Jueves</a></li>
+			<li><a href="#/dias/viernes">Viernes</a></li>
+			<li><a href="#/dias/sabado">Sabado</a></li>
+		</ul>
+	</div>
+	<div class="col-md-19" ng-view>
+		
+	</div>
+</div>
+</main>
+	
+	
+</body>
 </html>

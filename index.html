@@ -26,45 +26,51 @@
 	app.controller("timeline",function($scope,$routeParams){
 		$scope.lunes = [
 		{
-			name:'ENTREGA DE MATERIALES 1',
 			hora:'7:30',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			items:[
+			{
+				name:'ENTREGA DE MATERIALES 1',
+				horabase:'7:30 am - 1:00 pm',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			},
+			{
+				name:'ENTREGA DE MATERIALES 4',
+				horabase:'7:30 am - 1:00 pm',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			},
+			],
+			type:'inverse',
 		},
 		{
 			hora:'13:30',
-			name:'ENTREGA DE MATERIALES 2',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
-			type:'inverse'
+			items:[
+			{
+				name:'ENTREGA DE MATERIALES 2',
+				horabase:'7:30 am - 1:00 pm',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			},
+			]
 		},
 		{
 			hora:'15:30',
-			name:'ENTREGA DE MATERIALES 3',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			items:[
+			{
+				name:'ENTREGA DE MATERIALES 3',
+				horabase:'7:30 am - 1:00 pm',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			},
+			]
 			
-		},
+		}, 
 		{
 			hora:'18:30',
-			name:'ENTREGA DE MATERIALES 4',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
-			type:'inverse'
-		},
-		{
-			hora:'21:30',
-			name:'ENTREGA DE MATERIALES 5',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
-			
-		},
-		{
-			hora:'22:30',
-			name:'ENTREGA DE MATERIALES 6',
-			horabase:'7:30 am - 1:00 pm',
-			descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
-			type:'inverse'
+			items:[
+			{
+				name:'ENTREGA DE MATERIALES 4',
+				horabase:'7:30 am - 1:00 pm',
+				descripcion:'Todos con los #Morrales @XCOREISC Lugar de entrada:  - Lambayeque: - Chiclayo:',
+			},
+			]
 		},
 		];
 		$scope.martes = [
